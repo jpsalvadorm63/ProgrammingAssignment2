@@ -1,22 +1,22 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## This functio wrapes the matrix to includes stored data of inver matrix (cache)
 
 makeCacheMatrix <- function(x = matrix()) {
- mx.inv <- NULL
+    x.inv <- NULL
     set <- function(newmx) {
-        mx <<- newmx
-        mx.inv <<- NULL
+        x <<- newmx
+        x.inv <<- NULL
     }
-    get <- function() mx
-    setinverse <- function(inverse) mx.inv <<- inverse
-    getinverse <- function() mx.inv
+    get <- function() x
+    setinverse <- function(inverse) x.inv <<- inverse
+    getinverse <- function() x.inv
     list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 }
 
 
-## Write a short comment describing this function
+## This function calculates the inverse of a matrix stored (cached) in the makeCacheMatrix function
 
 cacheSolve <- function(x, ...) {
         m <- x$getinverse()
